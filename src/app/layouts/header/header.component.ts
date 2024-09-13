@@ -1,3 +1,4 @@
+import { routes } from '@/app.routes';
 import { Component, ElementRef, viewChild } from '@angular/core';
 
 @Component({
@@ -5,7 +6,7 @@ import { Component, ElementRef, viewChild } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-  <!-- TODO: Dark Mode -->
+    <!-- TODO: Dark Mode -->
     <header
       class="flex relative items-center justify-center text-center p-4 bg-transparent shadow-md z-50"
     >
@@ -110,7 +111,7 @@ import { Component, ElementRef, viewChild } from '@angular/core';
 
       <!-- user profile -->
       <div class="lg:flex flex-1 justify-end hidden">
-        <nav id="nav-social">
+        <nav id="nav-profile">
           <ul class="flex items-center list-none m-0 p-0 gap-6">
             <li
               class="relative flex items-center transition-colors duration-500 ease-in-out after:inline-block after:h-1 after:ml-6"
@@ -129,8 +130,18 @@ import { Component, ElementRef, viewChild } from '@angular/core';
                 href="#"
                 [class.text-gray-900]="!isMenuOpen"
                 [class.text-purple-50]="isMenuOpen"
-                >Logout</a
-              >
+                ><svg
+                  [class.fill-gray-900]="!isMenuOpen"
+                  [class.fill-purple-50]="isMenuOpen"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="2em"
+                  height="2em"
+                  viewBox="0 0 26 26"
+                >
+                  <path
+                    d="M17.869 3.889c-2.096 0-3.887 1.494-4.871 2.524c-.984-1.03-2.771-2.524-4.866-2.524C4.521 3.889 2 6.406 2 10.009c0 3.97 3.131 6.536 6.16 9.018c1.43 1.173 2.91 2.385 4.045 3.729c.191.225.471.355.765.355h.058c.295 0 .574-.131.764-.355c1.137-1.344 2.616-2.557 4.047-3.729C20.867 16.546 24 13.98 24 10.009c0-3.603-2.521-6.12-6.131-6.12"
+                  /></svg
+              ></a>
             </li>
             <li
               class="relative flex items-center transition-colors duration-500 ease-in-out"
@@ -140,8 +151,19 @@ import { Component, ElementRef, viewChild } from '@angular/core';
                 class="mr-8"
                 [class.text-gray-900]="!isMenuOpen"
                 [class.text-purple-50]="isMenuOpen"
-                >Perfil</a
-              >
+                ><svg
+                  [class.fill-gray-900]="!isMenuOpen"
+                  [class.fill-purple-50]="isMenuOpen"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="2em"
+                  height="2em"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M15.257 2H8.753A6.765 6.765 0 0 0 2 8.75v6.5a6.73 6.73 0 0 0 3.122 5.68a6 6 0 0 0 1.06.56a6.7 6.7 0 0 0 2.561.51h6.504c.9 0 1.791-.18 2.62-.53a6.5 6.5 0 0 0 1.131-.62A6.71 6.71 0 0 0 22 15.26v-6.5A6.76 6.76 0 0 0 15.257 2m-3.252 4.58a3.143 3.143 0 0 1 3.081 3.753a3.14 3.14 0 0 1-4.283 2.288a3.14 3.14 0 0 1-1.94-2.901a3.15 3.15 0 0 1 3.142-3.14m5.002 13.63a5 5 0 0 1-1.7.29H8.803a5.26 5.26 0 0 1-3.391-1.25a6.53 6.53 0 0 1 2.1-2.56a7.176 7.176 0 0 1 9.085 0a6.9 6.9 0 0 1 2.151 2.52c-.523.45-.828.698-1.486.907z"
+                  /></svg
+              ></a>
             </li>
           </ul>
         </nav>
@@ -225,6 +247,12 @@ import { Component, ElementRef, viewChild } from '@angular/core';
 })
 export class HeaderComponent {
   isMenuOpen = false;
+
+  menuItems = routes;
+
+  constructor() {
+    console.log(this.menuItems[0]);
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;

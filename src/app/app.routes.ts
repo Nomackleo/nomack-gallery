@@ -15,6 +15,38 @@ export const routes: Routes = [
         loadComponent: () =>
           import('@/pages/home/gallery/components/gallery/gallery.component'),
       },
+      {
+        path: 'profile',
+        title: 'profile',
+        loadComponent: () =>
+          import('@/pages/home/profile/components/profile/profile.component'),
+        children: [
+          {
+            path: 'photos',
+            title: 'User photos',
+            loadComponent: () =>
+              import(
+                '@/pages/home/profile/components/user-photos/user-photos.component'
+              ),
+          },
+          {
+            path: 'albums',
+            title: 'User albums',
+            loadComponent: () =>
+              import(
+                '@/pages/home/profile/components/user-albums/user-albums.component'
+              ),
+          },
+          {
+            path: 'albums/:id',
+            title: 'Album details',
+            loadComponent: () =>
+              import(
+                '@/pages/home/profile/components/album-detail/album-detail.component'
+              ),
+          },
+        ],
+      },
     ],
   },
   {

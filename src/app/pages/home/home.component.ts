@@ -10,7 +10,6 @@ import { RouterModule } from '@angular/router';
   template: `
     <header-gallery></header-gallery>
     <router-outlet></router-outlet>
-
     <footer-gallery></footer-gallery>
   `,
   styles: ``,

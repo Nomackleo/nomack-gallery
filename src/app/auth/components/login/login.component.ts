@@ -1,6 +1,11 @@
 import { AuthService } from '@/auth/services/auth.service';
 import { ValidatorFieldService } from '@/auth/services/validator-field.service';
-import { Component, computed, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from '@angular/core';
 import { getRedirectResult } from '@angular/fire/auth';
 import {
   FormBuilder,
@@ -39,7 +44,7 @@ import { Router } from '@angular/router';
             </label>
             <form
               [formGroup]="loginForm"
-              method="#"
+              method="post"
               action="#"
               class="mt-12"
               (ngSubmit)="login()"
@@ -56,6 +61,9 @@ import { Router } from '@angular/router';
                   pl-4 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-400"
                   required
                 />
+                @if (loginForm.controls['email'].invalid &&
+                (loginForm.controls['email'].dirty ||
+                loginForm.controls['email'].touched)) { }
                 <label
                   for="email"
                   class="absolute left-2 top-0 flex h-full text-gray-400 transform items-center pl-2 text-base transition-all duration-300
@@ -221,6 +229,7 @@ import { Router } from '@angular/router';
     </div>
   `,
   styles: ``,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class LoginComponent {
   private fb = inject(FormBuilder);
