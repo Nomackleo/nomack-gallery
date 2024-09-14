@@ -18,8 +18,9 @@ import { Component, ElementRef, viewChild } from '@angular/core';
           id="menu-button"
         >
           <span
-            class="block w-6 h-0.5  rounded-sm transition-all duration-500 ease-in-out transform-gpu hover:bg-indigo-500"
+            class="block w-6 h-0.5  rounded-sm transition-all duration-500 ease-in-out transform-gpu"
             [class.bg-gray-900]="!isMenuOpen"
+            [class.hover:bg-indigo-500]="!isMenuOpen"
             [class.bg-purple-50]="isMenuOpen"
             [class.rotate-45]="isMenuOpen"
             [class.translate-y-[6px]]="isMenuOpen"
@@ -27,6 +28,7 @@ import { Component, ElementRef, viewChild } from '@angular/core';
           <span
             class="block w-6 h-0.5  rounded-sm transition-all duration-500 ease-in-out hover:bg-indigo-500"
             [class.bg-gray-900]="!isMenuOpen"
+            [class.hover:bg-indigo-500]="!isMenuOpen"
             [class.bg-purple-50]="isMenuOpen"
             [class.scale-x-0]="isMenuOpen"
             [class.oapcity-0]="isMenuOpen"
@@ -34,6 +36,7 @@ import { Component, ElementRef, viewChild } from '@angular/core';
           <span
             class="block w-6 h-0.5  rounded-sm transition-all duration-500 ease-in-out hover:bg-indigo-500"
             [class.bg-gray-900]="!isMenuOpen"
+            [class.hover:bg-indigo-500]="!isMenuOpen"
             [class.bg-purple-50]="isMenuOpen"
             [class.-rotate-45]="isMenuOpen"
             [class.-translate-y-[6px]]="isMenuOpen"
@@ -117,10 +120,12 @@ import { Component, ElementRef, viewChild } from '@angular/core';
               class="relative flex items-center  after:inline-block after:h-1 after:ml-6 "
             >
               <a
-                class="hover:text-indigo-500 transition-colors duration-500 ease-in-out"
+                class=" transition-colors duration-500 ease-in-out"
                 href="#"
                 [class.text-gray-900]="!isMenuOpen"
                 [class.text-purple-50]="isMenuOpen"
+                [class.hover:text-indigo-500]="!isMenuOpen"
+                [class.hover:text-purple-300]="isMenuOpen"
                 ><svg
                   [class.fill-gray-900]="!isMenuOpen"
                   [class.fill-purple-50]="isMenuOpen"
@@ -143,10 +148,12 @@ import { Component, ElementRef, viewChild } from '@angular/core';
               class="relative flex items-center transition-colors duration-500 ease-in-out after:inline-block after:h-1 after:ml-6"
             >
               <a
-                class="hover:text-indigo-500 transition-colors duration-500 ease-in-out"
+                class=" transition-colors duration-500 ease-in-out"
                 href="#"
                 [class.text-gray-900]="!isMenuOpen"
                 [class.text-purple-50]="isMenuOpen"
+                [class.hover:text-indigo-500]="!isMenuOpen"
+                [class.hover:text-purple-300]="isMenuOpen"
                 ><svg
                   [class.fill-gray-900]="!isMenuOpen"
                   [class.fill-purple-50]="isMenuOpen"
@@ -166,9 +173,11 @@ import { Component, ElementRef, viewChild } from '@angular/core';
             >
               <a
                 href="#"
-                class=" mr-8 hover:text-indigo-500 transition-colors duration-500 ease-in-out"
+                class=" mr-8  transition-colors duration-500 ease-in-out"
                 [class.text-gray-900]="!isMenuOpen"
                 [class.text-purple-50]="isMenuOpen"
+                [class.hover:text-indigo-500]="!isMenuOpen"
+                [class.hover:text-purple-300]="isMenuOpen"
                 ><svg
                   [class.fill-gray-900]="!isMenuOpen"
                   [class.fill-purple-50]="isMenuOpen"
